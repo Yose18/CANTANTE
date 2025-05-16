@@ -1,0 +1,177 @@
+/* Estilo general del body con fondo animado y uso de flexbox */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffdd, #001eff, #7a00ff, #ff00f2);
+    background-size: 400% 400%;
+    animation: gradientBG 5s infinite alternate;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Animación del fondo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Estilo para el header */
+header {
+    background: #ff00f2;
+    color: white;
+    padding: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 0px 20px yellow, 0px 0px 40px red;
+    border-radius: 30px;
+    margin: 20px;
+    box-shadow: 0 0 30px yellow;
+    animation: glow 2s infinite alternate;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Animación de brillo */
+@keyframes glow {
+    0% { text-shadow: 0px 0px 20px yellow, 0px 0px 40px red; }
+    100% { text-shadow: 0px 0px 30px cyan, 0px 0px 50px green; }
+}
+
+/* Párrafos */
+p {
+    font-size: 22px;
+    line-height: 1.8;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, color 0.5s ease;
+    text-align: justify;
+    max-width: 80%;
+    width: 100%;
+}
+
+/* Hover párrafos */
+p:hover {
+    transform: scale(1.05) rotate(3deg);
+    color: #ff00f2;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 40px #ff00f2;
+}
+
+/* Contenedor de contenido */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Estilo para los iframe */
+iframe {
+    border: 10px solid white;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.8);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Estilo para las canciones */
+.song {
+    width: 80%;
+    max-width: 1000px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Títulos de canciones */
+.song h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff00f2;
+    text-shadow: 0 0 15px yellow, 0 0 30px red;
+    margin-bottom: 10px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Animación fadeIn */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    header {
+        font-size: 40px;
+        padding: 30px;
+    }
+
+    p {
+        font-size: 18px;
+        max-width: 90%;
+    }
+
+    iframe {
+        width: 90%;
+    }
+
+    .song h2 {
+        font-size: 25px;
+    }
+
+    .song {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 30px;
+        padding: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    .song h2 {
+        font-size: 20px;
+    }
+
+    .song {
+        width: 100%;
+    }
+}
